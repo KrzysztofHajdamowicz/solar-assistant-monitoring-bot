@@ -1,0 +1,33 @@
+configuration:
+  solar_assistant_url:
+    name: Solar Assistant URL
+  solar_assistant_username:
+    name: Local access username
+  solar_assistant_password:
+    name: Local access and SSH password
+  battery_count:
+    name: Battery pack count
+  freeze_seconds:
+    name: Freeze confirmation time
+  witness_seconds:
+    name: Inverter liveness window
+  rearm_seconds:
+    name: Healthy rearm time
+  automatic_recovery:
+    name: Enable automatic recovery
+  disconnect_wait_seconds:
+    name: Disconnect pause
+  ui_connect_timeout_seconds:
+    name: UI reconnect timeout
+  telemetry_recovery_timeout_seconds:
+    name: Telemetry recovery timeout
+  reboot_timeout_seconds:
+    name: Reboot timeout
+  ssh_host:
+    name: SSH host and port
+  ssh_user:
+    name: SSH user
+  ssh_host_key_sha256:
+    name: SSH host key SHA256 fingerprint
+  mqtt_topic_prefix:
+    name: MQTT output topic prefix

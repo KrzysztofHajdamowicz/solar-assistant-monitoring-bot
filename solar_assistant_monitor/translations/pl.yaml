@@ -1,0 +1,33 @@
+configuration:
+  solar_assistant_url:
+    name: Adres Solar Assistant
+  solar_assistant_username:
+    name: Uzytkownik dostepu lokalnego
+  solar_assistant_password:
+    name: Haslo dostepu lokalnego i SSH
+  battery_count:
+    name: Liczba pakietow baterii
+  freeze_seconds:
+    name: Czas potwierdzenia zamrozenia
+  witness_seconds:
+    name: Okno aktywnosci falownika
+  rearm_seconds:
+    name: Czas ponownego uzbrojenia
+  automatic_recovery:
+    name: Automatyczna naprawa
+  disconnect_wait_seconds:
+    name: Przerwa po Disconnect
+  ui_connect_timeout_seconds:
+    name: Limit ponownego polaczenia UI
+  telemetry_recovery_timeout_seconds:
+    name: Limit powrotu telemetrii
+  reboot_timeout_seconds:
+    name: Limit rebootu
+  ssh_host:
+    name: Host i port SSH
+  ssh_user:
+    name: Uzytkownik SSH
+  ssh_host_key_sha256:
+    name: Fingerprint SHA256 klucza SSH
+  mqtt_topic_prefix:
+    name: Prefiks wyjsciowy MQTT

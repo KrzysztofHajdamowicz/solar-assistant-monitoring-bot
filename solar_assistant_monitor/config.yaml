@@ -1,0 +1,48 @@
+name: Solar Assistant Monitoring Bot
+version: 0.1.0
+slug: solar_assistant_monitor
+description: Detects stalled Solar Assistant battery telemetry and performs bounded recovery.
+url: https://github.com/KrzysztofHajdamowicz/solar-assistant-monitoring-bot
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+init: false
+services:
+  - mqtt:want
+backup: hot
+options:
+  solar_assistant_url: http://solar-assistant.local
+  solar_assistant_username: admin
+  solar_assistant_password: null
+  battery_count: 3
+  freeze_seconds: 180
+  witness_seconds: 30
+  rearm_seconds: 300
+  automatic_recovery: true
+  disconnect_wait_seconds: 5
+  ui_connect_timeout_seconds: 90
+  telemetry_recovery_timeout_seconds: 180
+  reboot_timeout_seconds: 480
+  ssh_host: solar-assistant.local:22
+  ssh_user: solar-assistant
+  ssh_host_key_sha256: null
+  mqtt_topic_prefix: solar_assistant_monitor
+schema:
+  solar_assistant_url: url
+  solar_assistant_username: str
+  solar_assistant_password: password
+  battery_count: int(1,16)
+  freeze_seconds: int(60,3600)
+  witness_seconds: int(10,300)
+  rearm_seconds: int(60,3600)
+  automatic_recovery: bool
+  disconnect_wait_seconds: int(1,60)
+  ui_connect_timeout_seconds: int(30,600)
+  telemetry_recovery_timeout_seconds: int(30,900)
+  reboot_timeout_seconds: int(60,1800)
+  ssh_host: str
+  ssh_user: str
+  ssh_host_key_sha256: str
+  mqtt_topic_prefix: match(^[A-Za-z0-9_-]+(?:/[A-Za-z0-9_-]+)*$)

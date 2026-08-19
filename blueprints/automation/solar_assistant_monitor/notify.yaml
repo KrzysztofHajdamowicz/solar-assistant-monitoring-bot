@@ -1,0 +1,33 @@
+blueprint:
+  name: Solar Assistant monitor notifications
+  description: Run selected notification actions for Solar Assistant monitor events.
+  domain: automation
+  source_url: >-
+    https://github.com/KrzysztofHajdamowicz/solar-assistant-monitoring-bot/blob/main/blueprints/automation/solar_assistant_monitor/notify.yaml
+  input:
+    event_topic:
+      name: Event topic
+      default: solar_assistant_monitor/event
+      selector:
+        text: {}
+    notification_actions:
+      name: Notification actions
+      description: Actions may use the event variable, for example event.message and event.severity.
+      selector:
+        action: {}
+
+mode: queued
+max: 20
+
+trigger:
+  - platform: mqtt
+    topic: !input event_topic
+
+variables:
+  event: "{{ trigger.payload_json }}"
+
+condition:
+  - condition: template
+    value_template: "{{ event.schema_version | int(0) == 1 }}"
+
+action: !input notification_actions
