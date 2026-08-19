@@ -15,7 +15,7 @@ jobs:
         working-directory: solar_assistant_monitor
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-go@v6
+      - uses: actions/setup-go@v7
         with:
           go-version-file: solar_assistant_monitor/go.mod
           cache-dependency-path: solar_assistant_monitor/go.sum
