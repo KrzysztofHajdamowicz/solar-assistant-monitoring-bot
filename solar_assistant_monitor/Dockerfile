@@ -12,7 +12,7 @@ ENV RUN_BROWSER_TESTS=1
 ENV CHROMIUM_PATH=/usr/bin/chromium-browser
 RUN go test ./...
 
-FROM ghcr.io/home-assistant/base@sha256:94ff231402a5e7ad2a82e261ad5fa4ffae7d7bb095c3febb2edbdf309c9b6aca
+FROM ghcr.io/home-assistant/base@sha256:93ef607824e3f27e868f11b10938283a98bf880ed57bcf8eaa81c6c2d521f6f5
 
 ARG BUILD_ARCH
 ARG BUILD_VERSION=0.1.0
