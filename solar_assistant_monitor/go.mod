@@ -1,13 +1,13 @@
 module github.com/KrzysztofHajdamowicz/solar-assistant-monitoring-bot/solar_assistant_monitor
 
-go 1.26
+go 1.26.0
 
 require (
 	github.com/chromedp/cdproto v0.0.0-20260714215040-dc233986426f
 	github.com/chromedp/chromedp v0.16.0
 	github.com/eclipse/paho.mqtt.golang v1.5.1
 	github.com/gorilla/websocket v1.5.3
-	golang.org/x/crypto v0.55.0
+	golang.org/x/crypto v0.56.0
 )
 
 require (
